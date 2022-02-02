@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track_Employee</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div class="heading">
+       	<center><u><h1>Employee Details</h1></u></center>
+       	<center><a th:href="@{/userDetails}">Add Employee</a></center>
+    </div>
+    <div class="tables">
+        <center><table border="1" cellspacing="0" cellpadding="10px"></center>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>User Name</th>
+                    <th>User Contact</th>
+                    <th>User Address</th>
+                    <th>User email</th>
+                    <th>User Room Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="users: ${bookform}">
+                    <td th:text="${users.id}"></td>
+                    <td th:text="${users.name}"></td>
+                    <td th:text="${users.contact}"></td>
+                    <td th:text="${users.address}"></td>
+                    <td th:text="${users.email}"></td>
+                    <td th:text="${users.roomtype}"></td>
+                </tr>
+            </tbody>
+        </table>     
+    </div>
+</body>
+</html>
